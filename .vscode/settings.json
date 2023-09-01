@@ -1,7 +1,7 @@
 {
   // Visuals
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Vitesse Dark",
+  "workbench.colorTheme": "Moegi Black",
   "workbench.editor.tabCloseButton": "left",
   "workbench.fontAliasing": "antialiased",
   "workbench.list.smoothScrolling": true,
@@ -63,7 +63,6 @@
   "terminal.integrated.tabs.enabled": true,
   "scm.diffDecorationsGutterWidth": 2,
   "debug.onTaskErrors": "debugAnyway",
-  "diffEditor.ignoreTrimWhitespace": false,
   "search.exclude": {
     "**/.git": true,
     "**/.github": true,
@@ -158,7 +157,13 @@
   "workbench.productIconTheme": "icons-carbon",
   "workbench.iconTheme": "file-icons",
   "redhat.telemetry.enabled": true,
-  "window.zoomLevel": 1,
   "explorer.sortOrder": "type",
+  "editor.fontSize": 13,
+  "window.zoomLevel": 1,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "gitlens.proxy": {
+    "http": "127.0.0.1:7890",
+    "https": "127.0.0.1:7890",
+  },
   
 }
