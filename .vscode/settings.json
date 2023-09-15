@@ -1,7 +1,7 @@
 {
   // Visuals
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Moegi Black",
+  "workbench.colorTheme": "Vitesse Black",
   "workbench.editor.tabCloseButton": "left",
   "workbench.fontAliasing": "antialiased",
   "workbench.list.smoothScrolling": true,
@@ -11,6 +11,7 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
+  "editor.fontFamily": "Input Mono, Fira Code, monospace",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
 
   // Editor
@@ -159,11 +160,11 @@
   "redhat.telemetry.enabled": true,
   "explorer.sortOrder": "type",
   "editor.fontSize": 13,
-  "window.zoomLevel": 1,
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.proxy": {
     "http": "127.0.0.1:7890",
     "https": "127.0.0.1:7890",
   },
+  "window.zoomLevel": 2,
   
 }
