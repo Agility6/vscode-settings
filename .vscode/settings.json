@@ -1,7 +1,5 @@
 {
-  // Visuals
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Vitesse Black",
+  "workbench.colorTheme": "Vitesse Dark",
   "workbench.editor.tabCloseButton": "left",
   "workbench.fontAliasing": "antialiased",
   "workbench.list.smoothScrolling": true,
@@ -32,9 +30,9 @@
   "editor.stickyScroll.enabled": true,
   "editor.hover.sticky": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true, // this allows ESLint to auto fix on save
-    "source.organizeImports": false
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "explorer.confirmDelete": false,
@@ -165,6 +163,47 @@
     "http": "127.0.0.1:7890",
     "https": "127.0.0.1:7890",
   },
-  "window.zoomLevel": 2,
-  
+
+  // vim config 
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    } 
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    } 
+  ],
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "before": ["H"],
+      "after": ["^"]
+    },
+    {
+      "before": ["L"],
+      "after": ["g", "_"]
+    }
+  ],
+  "window.zoomLevel": 1,
+  "explorer.compactFolders": false,
+  "workbench.editor.tabActionLocation": "left"
 }
