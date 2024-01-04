@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Vitesse Dark",
+  "workbench.colorTheme": "Evondev Dracula Darker Contrast",
   "workbench.editor.tabCloseButton": "left",
   "workbench.fontAliasing": "antialiased",
   "workbench.list.smoothScrolling": true,
@@ -9,7 +9,9 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-  "editor.fontFamily": "Input Mono, Fira Code, monospace",
+	"editor.lineHeight": 24,
+	"editor.lineNumbers": "on",
+  "editor.fontFamily": "fira code medium, Input Mono, Fira Code, monospace",
   "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
 
   // Editor
@@ -203,7 +205,7 @@
       "after": ["g", "_"]
     }
   ],
-  "window.zoomLevel": 1,
   "explorer.compactFolders": false,
-  "workbench.editor.tabActionLocation": "left"
+  "workbench.editor.tabActionLocation": "left",
+  "window.zoomLevel": 1
 }
