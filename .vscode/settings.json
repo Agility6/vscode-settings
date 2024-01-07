@@ -28,6 +28,10 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true
   },
+  "[c]": { // c tabSize
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.stickyScroll.enabled": true,
   "editor.hover.sticky": true,
