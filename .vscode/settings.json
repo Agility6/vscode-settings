@@ -28,9 +28,10 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true
   },
-  "[c]": { // c tabSize
+  "[cpp]": {
     "editor.tabSize": 4,
-    "editor.insertSpaces": true
+    "editor.suggest.insertMode": "replace",
+    "editor.semanticHighlighting.enabled": true
   },
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.stickyScroll.enabled": true,
@@ -160,7 +161,7 @@
   "iconify.annotations": true,
   "iconify.inplace": true,
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "file-icons",
+  "workbench.iconTheme": "catppuccin-mocha",
   "redhat.telemetry.enabled": true,
   "explorer.sortOrder": "type",
   "editor.fontSize": 13,
@@ -211,5 +212,8 @@
   ],
   "explorer.compactFolders": false,
   "workbench.editor.tabActionLocation": "left",
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "go.toolsManagement.autoUpdate": true,
+  "code-runner.runInTerminal": true,
+
 }
