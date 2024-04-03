@@ -161,7 +161,7 @@
   "iconify.annotations": true,
   "iconify.inplace": true,
   "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.iconTheme": "catppuccin-perfect-mocha",
   "redhat.telemetry.enabled": true,
   "explorer.sortOrder": "type",
   "editor.fontSize": 13,
@@ -215,5 +215,6 @@
   "window.zoomLevel": 1,
   "go.toolsManagement.autoUpdate": true,
   "code-runner.runInTerminal": true,
+  "liveServer.settings.donotShowInfoMsg": true,
 
 }
