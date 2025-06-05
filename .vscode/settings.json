@@ -1,29 +1,29 @@
 {
-  "workbench.colorTheme": "Evondev Dracula Darker Contrast",
-  "workbench.editor.tabCloseButton": "left",
+  // ========== Visuals ==========
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontFamily": "Geist mono Medium,Fira Code, Input Mono, monospace",
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
+  "editor.guides.bracketPairs": "active",
+  "editor.lineNumbers": "interval",
+  "editor.renderWhitespace": "boundary",
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Vitesse Dark",
+  "workbench.editor.tabActionLocation": "left",
   "workbench.fontAliasing": "antialiased",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
-  "workbench.preferredDarkColorTheme": "Gruvbox Dark Hard",
-  "workbench.preferredLightColorTheme": "Moegi Light Vitesse",
+  "workbench.preferredLightColorTheme": "Moegi Black",
+  "workbench.productIconTheme": "icons-carbon",
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-	"editor.lineHeight": 24,
-	"editor.lineNumbers": "on",
-  "editor.fontFamily": "fira code medium, Input Mono, Fira Code, monospace",
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
-
   // Editor
   "editor.accessibilitySupport": "off",
-  "editor.cursorSmoothCaretAnimation": "on",
   "editor.find.addExtraSpaceOnTop": false,
-  "editor.guides.bracketPairs": "active",
   "editor.inlineSuggest.enabled": true,
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderWhitespace": "boundary",
   "editor.suggestSelection": "first",
-  "editor.tabSize": 2,
   "[java]": { // java tabSize
     "editor.tabSize": 4,
     "editor.insertSpaces": true
@@ -44,7 +44,6 @@
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "window.autoDetectColorScheme": true,
   "window.dialogStyle": "custom",
   "window.nativeTabs": true, // this is great, macOS only
   "window.titleBarStyle": "custom",
@@ -87,7 +86,6 @@
     "**/tmp": true,
     "**/yarn.lock": true
   },
-
   // Extension configs
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
@@ -99,7 +97,6 @@
     "cSpell",
     "eslint"
   ],
-
   // copilot
   // "github.copilot.enable": {
   //   "*": true,
@@ -107,7 +104,6 @@
   //   "plaintext": false,
   //   "yaml": false
   // },
-
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,en-US",
   "css.lint.hexColorLength": "ignore",
@@ -157,74 +153,106 @@
       "stash": true
     }
   },
-  
   "iconify.annotations": true,
   "iconify.inplace": true,
-  "workbench.productIconTheme": "icons-carbon",
-  "workbench.iconTheme": "file-icons-colourless",
   "redhat.telemetry.enabled": true,
   "explorer.sortOrder": "type",
-  "editor.fontSize": 14,
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.proxy": {
     "http": "127.0.0.1:7890",
     "https": "127.0.0.1:7890",
   },
-
   // vim config 
   "vim.normalModeKeyBindings": [
     {
-      "before": ["H"],
-      "after": ["^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["g", "_"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "g",
+        "_"
+      ]
     },
     {
-      "before": ["J"],
-      "after": ["5", "j"]
+      "before": [
+        "J"
+      ],
+      "after": [
+        "5",
+        "j"
+      ]
     },
     {
-      "before": ["K"],
-      "after": ["5", "k"]
-    } 
+      "before": [
+        "K"
+      ],
+      "after": [
+        "5",
+        "k"
+      ]
+    }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": ["J"],
-      "after": ["5", "j"]
+      "before": [
+        "J"
+      ],
+      "after": [
+        "5",
+        "j"
+      ]
     },
     {
-      "before": ["K"],
-      "after": ["5", "k"]
-    } 
+      "before": [
+        "K"
+      ],
+      "after": [
+        "5",
+        "k"
+      ]
+    }
   ],
   "vim.operatorPendingModeKeyBindings": [
     {
-      "before": ["H"],
-      "after": ["^"]
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["L"],
-      "after": ["g", "_"]
+      "before": [
+        "L"
+      ],
+      "after": [
+        "g",
+        "_"
+      ]
     }
   ],
   "vim.handleKeys": {
     "<C-d>": true,
     "<C-s>": false,
     "<C-z>": false,
-    "<C-a>": false, 
+    "<C-a>": false,
     "<C-c>": false,
-    "<C-v>": false, 
-    "<C-x>": false, 
-    "<C-f>": false, 
-    "<C-h>": false,  
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-f>": false,
+    "<C-h>": false,
     "<C-y>": false,
     "<C-w>": false,
   },
   "explorer.compactFolders": false,
-  "workbench.editor.tabActionLocation": "left",
   "go.toolsManagement.autoUpdate": true,
   "code-runner.runInTerminal": true,
   "liveServer.settings.donotShowInfoMsg": true,
@@ -233,13 +261,6 @@
   "settingsSync.ignoredSettings": [
     "editor.fontFamily"
   ],
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false,
-    "go": true
-  },
   "cSpell.userWords": [
     "Aggr",
     "bson",
@@ -262,8 +283,36 @@
   ],
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "workbench.editor.enablePreview": false,
-  "workbench.activityBar.location": "top",
   "leetcode.endpoint": "leetcode-cn",
   "leetcode.workspaceFolder": "/Users/SL/.leetcode",
-
+  "workbench.activityBar.location": "top",
+  "editor.scrollbar.horizontalScrollbarSize": 13,
+  "editor.tabSize": 2,
+  "editor.fontSize": 13,
+  "go.lintFlags": [
+    "--fast"
+  ],
+  "[go]":{
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "go.lintTool": "golangci-lint",
+  "go.formatTool": "goimports",
+  "functionTemplate": "// ${func_name} \n// @author: Merrick \n// @param ${param_name} \n",
+  "gitlens.graph.minimap.enabled": false,
+  "editor.lineHeight": 1.9,
+  "gitlens.views.scm.grouped.hiddenViews": {
+    "commits": false,
+    "branches": false,
+    "remotes": true,
+    "stashes": false,
+    "tags": false,
+    "worktrees": false,
+    "contributors": false,
+    "repositories": true,
+    "searchAndCompare": false,
+    "launchpad": false
+  },
+  "workbench.preferredDarkColorTheme": "Vitesse Black",
 }
