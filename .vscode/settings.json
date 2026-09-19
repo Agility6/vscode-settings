@@ -1,266 +1,694 @@
 {
-  // ========== Visuals ==========
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.fontFamily": "Geist mono Medium,Fira Code, Input Mono, monospace",
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
-  "editor.guides.bracketPairs": "active",
-  "editor.lineNumbers": "interval",
-  "editor.renderWhitespace": "boundary",
-  "window.autoDetectColorScheme": true,
-  "workbench.colorTheme": "Vitesse Dark",
-  "workbench.editor.tabActionLocation": "left",
-  "workbench.fontAliasing": "antialiased",
-  "workbench.iconTheme": "catppuccin-mocha",
-  "workbench.list.smoothScrolling": true,
-  "workbench.preferredLightColorTheme": "Moegi Black",
-  "workbench.productIconTheme": "icons-carbon",
-  "workbench.sideBar.location": "right",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.tree.expandMode": "singleClick",
-  "workbench.tree.indent": 10,
-  // Editor
+  // ==================== 编辑器：通用行为 ====================
+
+  // 强制关闭屏幕阅读器优化模式。
   "editor.accessibilitySupport": "off",
-  "editor.find.addExtraSpaceOnTop": false,
-  "editor.inlineSuggest.enabled": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.suggestSelection": "first",
-  "[java]": { // java tabSize
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true
-  },
-  "[cpp]": {
-    "editor.tabSize": 4,
-    "editor.suggest.insertMode": "replace",
-    "editor.semanticHighlighting.enabled": true
-  },
-  "editor.unicodeHighlight.invisibleCharacters": false,
-  "editor.stickyScroll.enabled": true,
-  "editor.hover.sticky": true,
+
+  // 配置保存文件时执行的代码操作。
   "editor.codeActionsOnSave": {
+    // 保存时不运行所有可用的自动修复。
     "source.fixAll": "never",
+    // 显式保存时运行 ESLint 自动修复。
     "source.fixAll.eslint": "explicit",
+    // 保存时不自动整理导入。
     "source.organizeImports": "never"
   },
+
+  // 为光标移动启用平滑动画。
+  "editor.cursorSmoothCaretAnimation": "on",
+
+  // 查找控件打开时不在编辑器顶部增加额外空间。
+  "editor.find.addExtraSpaceOnTop": false,
+
+  // 设置编辑器字体，并按从左到右的顺序回退。
+  "editor.fontFamily": "Geist mono SemiBold,Fira Code, Input Mono, monospace",
+
+  // 启用所列 OpenType 字体特性和数字零样式。
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
+
+  // 仅为当前活动的括号对显示引导线。
+  "editor.guides.bracketPairs": "active",
+
+  // 让鼠标可以移入并停留在编辑器悬浮提示中。
+  "editor.hover.sticky": true,
+
+  // 默认隐藏内联提示，仅在按下临时显示按键时展示。
+  "editor.inlayHints.enabled": "offUnlessPressed",
+
+  // 允许编辑器显示幽灵文本等内联建议。
+  "editor.inlineSuggest.enabled": true,
+
+  // 设置编辑器行高为 2.1 像素。
+  "editor.lineHeight": 2.1,
+
+  // 使用 Ctrl/Cmd 加鼠标点击创建多个光标。
+  "editor.multiCursorModifier": "ctrlCmd",
+
+  // 仅显示边界位置和多余的空白字符。
+  "editor.renderWhitespace": "boundary",
+
+  // 将编辑器水平滚动条高度设置为 14 像素。
+  "editor.scrollbar.horizontalScrollbarSize": 14,
+
+  // 滚动代码时在顶部固定显示当前作用域。
+  "editor.stickyScroll.enabled": true,
+
+  // 打开建议列表时默认选中第一项。
+  "editor.suggestSelection": "first",
+
+  // 将默认缩进宽度设置为 2 个字符。
+  "editor.tabSize": 2,
+
+  // 不特别高亮不可见的 Unicode 字符。
+  "editor.unicodeHighlight.invisibleCharacters": false,
+
+  // 指定双击选词和按词移动时使用的单词分隔符。
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "window.dialogStyle": "custom",
-  "window.nativeTabs": true, // this is great, macOS only
-  "window.titleBarStyle": "custom",
-  "workbench.editor.closeOnFileDelete": true,
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 5,
-  "extensions.autoUpdate": "onlyEnabledExtensions",
-  "extensions.ignoreRecommendations": true,
-  "files.eol": "\n",
-  "files.insertFinalNewline": true,
-  "files.simpleDialog.enable": true,
-  "git.autofetch": true,
-  "git.confirmSync": false,
-  "git.enableSmartCommit": true,
-  "git.untrackedChanges": "separate",
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.fontWeight": "300",
-  "terminal.integrated.persistentSessionReviveProcess": "never",
-  "terminal.integrated.tabs.enabled": true,
-  "scm.diffDecorationsGutterWidth": 2,
-  "debug.onTaskErrors": "debugAnyway",
-  "search.exclude": {
-    "**/.git": true,
-    "**/.github": true,
-    "**/.nuxt": true,
-    "**/.output": true,
-    "**/.pnpm": true,
-    "**/.vscode": true,
-    "**/.yarn": true,
-    "**/bower_components": true,
-    "**/dist/**": true,
-    "**/logs": true,
-    "**/node_modules": true,
-    "**/out/**": true,
-    "**/package-lock.json": true,
-    "**/pnpm-lock.yaml": true,
-    "**/tmp": true,
-    "**/yarn.lock": true
+
+  // ==================== 工作台与界面布局 ====================
+
+  // 将活动栏放置在窗口顶部。
+  "workbench.activityBar.location": "top",
+
+  // 禁止聊天代理使用 VS Code 集成浏览器工具。
+  "workbench.browser.enableChatTools": false,
+
+  // 针对指定主题自定义工作台颜色。
+  "workbench.colorCustomizations": {
+    // Moegi Black 主题的专属颜色覆盖。
+    "[Moegi Black]": {
+      // 活动列表项使用带透明度的蓝色背景。
+      "list.activeSelectionBackground": "#007acc88",
+      // 活动列表项文字使用白色。
+      "list.activeSelectionForeground": "#ffffff",
+      // 鼠标悬停的列表项使用深灰色背景。
+      "list.hoverBackground": "#37373d",
+      // 非活动选中项使用灰色背景。
+      "list.inactiveSelectionBackground": "#414342"
+    },
+    // Vitesse Dark 主题的专属颜色覆盖。
+    "[Vitesse Dark]": {
+      // 活动列表项使用带透明度的蓝色背景。
+      "list.activeSelectionBackground": "#007acc88",
+      // 活动列表项文字使用白色。
+      "list.activeSelectionForeground": "#ffffff",
+      // 鼠标悬停的列表项使用深灰色背景。
+      "list.hoverBackground": "#37373d",
+      // 非活动选中项使用灰色背景。
+      "list.inactiveSelectionBackground": "#414342"
+    }
   },
-  // Extension configs
-  "emmet.showSuggestionsAsSnippets": true,
-  "emmet.triggerExpansionOnTab": false,
-  "errorLens.enabledDiagnosticLevels": [
-    "warning",
-    "error"
-  ],
-  "errorLens.excludeBySource": [
-    "cSpell",
-    "eslint"
-  ],
-  // copilot
-  // "github.copilot.enable": {
-  //   "*": true,
-  //   "markdown": true,
-  //   "plaintext": false,
-  //   "yaml": false
-  // },
-  "cSpell.allowCompoundWords": true,
-  "cSpell.language": "en,en-US",
-  "css.lint.hexColorLength": "ignore",
+
+  // 文件被删除后关闭对应的编辑器标签。
+  "workbench.editor.closeOnFileDelete": true,
+
+  // 禁用预览标签，每次打开文件都创建持久标签。
+  "workbench.editor.enablePreview": false,
+
+  // 隐藏空编辑器区域中的操作提示。
+  "workbench.editor.empty.hint": "hidden",
+
+  // 高亮显示包含未保存修改的标签。
+  "workbench.editor.highlightModifiedTabs": true,
+
+  // 启用打开编辑器数量限制。
+  "workbench.editor.limit.enabled": true,
+
+  // 分别限制每一个编辑器组的标签数量。
+  "workbench.editor.limit.perEditorGroup": true,
+
+  // 每个编辑器组最多保留 5 个编辑器标签。
+  "workbench.editor.limit.value": 5,
+
+  // 将标签页操作按钮放在标签左侧。
+  "workbench.editor.tabActionLocation": "left",
+
+  // 使用灰度抗锯齿渲染工作台字体。
+  "workbench.fontAliasing": "antialiased",
+
+  // 使用 file-icons 文件图标主题。
+  "workbench.iconTheme": "file-icons",
+
+  // 为工作台列表启用平滑滚动。
+  "workbench.list.smoothScrolling": true,
+
+  // 系统进入深色模式时使用 Vitesse Dark 主题。
+  "workbench.preferredDarkColorTheme": "Vitesse Dark",
+
+  // 系统进入浅色模式时使用 Moegi Light 主题。
+  "workbench.preferredLightColorTheme": "Moegi Light",
+
+  // 将主侧边栏放在窗口右侧。
+  "workbench.sideBar.location": "right",
+
+  // 单击即可展开工作台树节点。
+  "workbench.tree.expandMode": "singleClick",
+
+  // 将工作台树的每级缩进设置为 10 像素。
+  "workbench.tree.indent": 10,
+
+  // 在面包屑导航中显示编辑器或资源类型。
+  "breadcrumbs.showEditorType": true,
+
+  // ==================== 窗口行为 ====================
+
+  // 根据操作系统外观自动切换深色和浅色主题。
+  "window.autoDetectColorScheme": true,
+
+  // 使用 VS Code 自定义样式的对话框。
+  "window.dialogStyle": "custom",
+
+  // 在 macOS 上启用系统原生窗口标签页。
+  "window.nativeTabs": true,
+
+  // 使用 VS Code 自定义标题栏。
+  "window.titleBarStyle": "custom",
+
+  // ==================== 文件、资源管理器与搜索 ====================
+
+  // Diff 编辑器不忽略行首和行尾空白差异。
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  // 不确认资源管理器中的文件删除操作。
+  "explorer.confirmDelete": false,
+
+  // 不确认资源管理器中的拖放移动操作。
+  "explorer.confirmDragAndDrop": false,
+
+  // 不把只有一个子目录的目录链压缩成一行。
+  "explorer.compactFolders": false,
+
+  // 按文件类型对资源管理器项目排序。
+  "explorer.sortOrder": "type",
+
+  // 新文件默认使用 LF 换行符。
+  "files.eol": "\n",
+
+  // 保存文件时确保文件末尾存在换行符。
+  "files.insertFinalNewline": true,
+
+  // 使用 VS Code 简易文件选择器替代系统文件对话框。
+  "files.simpleDialog.enable": true,
+
+  // 从全文搜索中排除指定文件和目录。
+  "search.exclude": {
+    // 排除 Git 元数据目录。
+    "**/.git": true,
+    // 排除 GitHub 工作流和配置目录。
+    "**/.github": true,
+    // 排除 Nuxt 构建目录。
+    "**/.nuxt": true,
+    // 排除通用输出目录。
+    "**/.output": true,
+    // 排除 pnpm 内部目录。
+    "**/.pnpm": true,
+    // 排除项目级 VS Code 配置目录。
+    "**/.vscode": true,
+    // 排除 Yarn 内部目录。
+    "**/.yarn": true,
+    // 排除 Bower 依赖目录。
+    "**/bower_components": true,
+    // 排除 dist 构建产物目录中的所有内容。
+    "**/dist/**": true,
+    // 排除日志目录。
+    "**/logs": true,
+    // 排除 Node.js 依赖目录。
+    "**/node_modules": true,
+    // 排除 out 输出目录中的所有内容。
+    "**/out/**": true,
+    // 排除 npm 锁文件。
+    "**/package-lock.json": true,
+    // 排除 pnpm 锁文件。
+    "**/pnpm-lock.yaml": true
+    // 以下配置保持停用：排除临时目录。
+    // "**/tmp": true,
+    // 以下配置保持停用：排除 Yarn 锁文件。
+    // "**/yarn.lock": true,
+    // 以下配置保持停用：排除 Protobuf 生成的 Go 文件。
+    // "**/*.pb.go": true,
+    // 以下配置保持停用：排除通用生成的 Go 文件。
+    // "**/*.gen.go": true,
+    // 以下配置保持停用：排除 Protobuf Validate 生成文件。
+    // "**/*.pb.validate.go": true
+  },
+
+  // 将 SCM 差异装饰条宽度设置为 2 像素。
+  "scm.diffDecorationsGutterWidth": 2,
+
+  // 调试前置任务报错时仍继续启动调试。
+  "debug.onTaskErrors": "debugAnyway",
+
+  // ==================== 终端 ====================
+
+  // 启用集成终端光标闪烁。
+  "terminal.integrated.cursorBlinking": true,
+
+  // 将集成终端光标显示为竖线。
+  "terminal.integrated.cursorStyle": "line",
+
+  // 在 macOS 上默认使用 fish 终端配置。
+  "terminal.integrated.defaultProfile.osx": "fish",
+
+  // 将集成终端字体字重设置为 300。
+  "terminal.integrated.fontWeight": "300",
+
+  // 恢复持久终端会话时不复活原进程。
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+
+  // 定义 macOS 可使用的集成终端配置。
+  "terminal.integrated.profiles.osx": {
+    // Bash 登录 Shell 配置。
+    "bash": {
+      // 从 PATH 中查找 bash 可执行文件。
+      "path": "bash",
+      // 使用登录 Shell 模式启动 bash。
+      "args": [
+        "-l"
+      ],
+      // 使用 Bash 终端图标。
+      "icon": "terminal-bash"
+    },
+    // Zsh 登录 Shell 配置。
+    "zsh": {
+      // 从 PATH 中查找 zsh 可执行文件。
+      "path": "zsh",
+      // 使用登录 Shell 模式启动 zsh。
+      "args": [
+        "-l"
+      ]
+    },
+    // Fish 登录 Shell 配置。
+    "fish": {
+      // 使用 Homebrew 安装的 fish 绝对路径。
+      "path": "/opt/homebrew/bin/fish",
+      // 使用登录 Shell 模式启动 fish。
+      "args": [
+        "-l"
+      ]
+    },
+    // tmux 终端配置。
+    "tmux": {
+      // 从 PATH 中查找 tmux 可执行文件。
+      "path": "tmux",
+      // 使用 tmux 终端图标。
+      "icon": "terminal-tmux"
+    },
+    // PowerShell 终端配置。
+    "pwsh": {
+      // 从 PATH 中查找 pwsh 可执行文件。
+      "path": "pwsh",
+      // 使用 PowerShell 终端图标。
+      "icon": "terminal-powershell"
+    }
+  },
+
+  // 不允许 Agent CLI 修改终端标签标题。
+  "terminal.integrated.tabs.allowAgentCliTitle": false,
+
+  // 显示集成终端标签列表。
+  "terminal.integrated.tabs.enabled": true,
+
+  // ==================== Git 与 GitLens ====================
+
+  // 在后台自动从 Git 远端获取更新。
+  "git.autofetch": true,
+
+  // 执行 Git 同步操作前不显示确认。
+  "git.confirmSync": false,
+
+  // 没有暂存内容时允许执行智能提交。
+  "git.enableSmartCommit": true,
+
+  // 在 SCM 视图中把未跟踪文件单独分组。
+  "git.untrackedChanges": "separate",
+
+  // 使用 GitKraken 作为 GitLens AI 提供方。
+  "gitlens.ai.model": "gitkraken",
+
+  // 为 GitKraken AI 指定 Gemini 2.5 Flash 模型。
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.5-flash",
+
+  // 关闭 GitLens 作者 CodeLens。
   "gitlens.codeLens.authors.enabled": false,
+
+  // 关闭所有 GitLens CodeLens。
   "gitlens.codeLens.enabled": false,
+
+  // 关闭 GitLens 最近改动 CodeLens。
   "gitlens.codeLens.recentChange.enabled": false,
+
+  // 对指定 GitLens Git 命令跳过确认。
+  "gitlens.gitCommands.skipConfirmations": [
+    // Fetch 命令不再确认。
+    "fetch:command",
+    // 创建 Stash 的命令不再确认。
+    "stash-push:command"
+  ],
+
+  // 关闭 GitLens Commit Graph 小地图。
+  "gitlens.graph.minimap.enabled": false,
+
+  // 控制 GitLens 在不同界面上下文中显示的菜单项。
   "gitlens.menus": {
+    // 编辑器正文右键菜单。
     "editor": {
+      // 隐藏 blame 菜单。
       "blame": false,
+      // 显示复制相关菜单。
       "clipboard": true,
+      // 显示比较相关菜单。
       "compare": true,
+      // 隐藏历史菜单。
       "history": false,
+      // 隐藏远端相关菜单。
       "remote": false
     },
+    // 编辑器组菜单。
     "editorGroup": {
+      // 显示 blame 菜单。
       "blame": true,
+      // 隐藏比较菜单。
       "compare": false
     },
+    // 编辑器标签右键菜单。
     "editorTab": {
+      // 显示复制相关菜单。
       "clipboard": true,
+      // 显示比较相关菜单。
       "compare": true,
+      // 显示历史菜单。
       "history": true,
+      // 显示远端相关菜单。
       "remote": true
     },
+    // 资源管理器右键菜单。
     "explorer": {
+      // 显示复制相关菜单。
       "clipboard": true,
+      // 显示比较相关菜单。
       "compare": true,
+      // 显示历史菜单。
       "history": true,
+      // 显示远端相关菜单。
       "remote": true
     },
+    // SCM 顶层菜单。
     "scm": {
+      // 显示作者相关菜单。
       "authors": true
     },
+    // SCM 分组菜单。
     "scmGroup": {
+      // 显示比较相关菜单。
       "compare": true,
+      // 显示打开和关闭相关菜单。
       "openClose": true,
+      // 显示 Stash 相关菜单。
       "stash": true
     },
+    // SCM 分组行内菜单。
     "scmGroupInline": {
+      // 显示 Stash 行内操作。
       "stash": true
     },
+    // SCM 单个变更项菜单。
     "scmItem": {
+      // 显示复制相关菜单。
       "clipboard": true,
+      // 显示比较相关菜单。
       "compare": true,
+      // 显示历史菜单。
       "history": true,
+      // 隐藏远端相关菜单。
       "remote": false,
+      // 显示 Stash 相关菜单。
       "stash": true
     }
   },
-  "iconify.annotations": true,
-  "iconify.inplace": true,
-  "redhat.telemetry.enabled": true,
-  "explorer.sortOrder": "type",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "gitlens.proxy": {
-    "http": "127.0.0.1:7890",
-    "https": "127.0.0.1:7890",
+
+  // 在 GitLens Commits 视图中显示 Stash。
+  "gitlens.views.commits.showStashes": true,
+
+  // 控制 GitLens SCM 分组中隐藏或显示的视图。
+  "gitlens.views.scm.grouped.hiddenViews": {
+    // 不隐藏 Commits 视图。
+    "commits": false,
+    // 不隐藏 Worktrees 视图。
+    "worktrees": false,
+    // 不隐藏 Branches 视图。
+    "branches": false,
+    // 隐藏 Remotes 视图。
+    "remotes": true,
+    // 隐藏 Stashes 视图。
+    "stashes": true,
+    // 不隐藏 Tags 视图。
+    "tags": false,
+    // 不隐藏 Contributors 视图。
+    "contributors": false,
+    // 隐藏 Repositories 视图。
+    "repositories": true,
+    // 不隐藏 File History 视图。
+    "fileHistory": false,
+    // 不隐藏 Launchpad 视图。
+    "launchpad": false,
+    // 不隐藏 Search & Compare 视图。
+    "searchAndCompare": false
   },
-  // vim config 
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [
-        "H"
-      ],
-      "after": [
-        "^"
-      ]
-    },
-    {
-      "before": [
-        "L"
-      ],
-      "after": [
-        "g",
-        "_"
-      ]
-    },
-    {
-      "before": [
-        "J"
-      ],
-      "after": [
-        "5",
-        "j"
-      ]
-    },
-    {
-      "before": [
-        "K"
-      ],
-      "after": [
-        "5",
-        "k"
-      ]
-    }
+
+  // ==================== Go、C/C++、Docker 与 Web 工具 ====================
+
+  // 忽略 CSS 十六进制颜色长度检查。
+  "css.lint.hexColorLength": "ignore",
+
+  // 在补全列表中把 Emmet 建议显示为代码片段。
+  "emmet.showSuggestionsAsSnippets": true,
+
+  // 按 Tab 时不直接触发 Emmet 展开。
+  "emmet.triggerExpansionOnTab": false,
+
+  // 使用标准 gofmt 格式化 Go 文件。
+  "go.formatTool": "gofmt",
+
+  // 为 Go 短变量声明显示推断类型内联提示。
+  "go.inlayHints.assignVariableTypes": true,
+
+  // 为 Go 复合字面量显示字段名内联提示。
+  "go.inlayHints.compositeLiteralFields": true,
+
+  // 为 Go 复合字面量显示省略的类型内联提示。
+  "go.inlayHints.compositeLiteralTypes": true,
+
+  // 为 Go 常量显示计算后的值。
+  "go.inlayHints.constantValues": true,
+
+  // 为 Go 泛型函数调用显示推断的类型参数。
+  "go.inlayHints.functionTypeParameters": true,
+
+  // 提示 Go 代码中被忽略的 error 返回值。
+  "go.inlayHints.ignoredError": true,
+
+  // 在 Go 函数调用处显示参数名。
+  "go.inlayHints.parameterNames": true,
+
+  // 为 Go range 变量显示推断类型。
+  "go.inlayHints.rangeVariableTypes": true,
+
+  // 不向 gopls 传递额外启动参数。
+  "go.languageServerFlags": [],
+
+  // 向 Go linter 传递仅运行快速检查器的参数。
+  "go.lintFlags": [
+    "--fast"
   ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": [
-        "J"
-      ],
-      "after": [
-        "5",
-        "j"
-      ]
-    },
-    {
-      "before": [
-        "K"
-      ],
-      "after": [
-        "5",
-        "k"
-      ]
-    }
-  ],
-  "vim.operatorPendingModeKeyBindings": [
-    {
-      "before": [
-        "H"
-      ],
-      "after": [
-        "^"
-      ]
-    },
-    {
-      "before": [
-        "L"
-      ],
-      "after": [
-        "g",
-        "_"
-      ]
-    }
-  ],
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-s>": false,
-    "<C-z>": false,
-    "<C-a>": false,
-    "<C-c>": false,
-    "<C-v>": false,
-    "<C-x>": false,
-    "<C-f>": false,
-    "<C-h>": false,
-    "<C-y>": false,
-    "<C-w>": false,
-  },
-  "explorer.compactFolders": false,
+
+  // 使用 golangci-lint 作为额外 Go lint 工具。
+  "go.lintTool": "golangci-lint",
+
+  // 自动更新 Go 扩展管理的开发工具。
   "go.toolsManagement.autoUpdate": true,
-  "code-runner.runInTerminal": true,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "http.proxyStrictSSL": false,
-  "security.workspace.trust.untrustedFiles": "open",
-  "settingsSync.ignoredSettings": [
-    "editor.fontFamily"
+
+  // Go 文件的语言专属设置。
+  "[go]": {
+    // 配置保存 Go 文件时执行的代码操作。
+    "editor.codeActionsOnSave": {
+      // 显式保存 Go 文件时整理导入。
+      "source.organizeImports": "explicit"
+    }
+  },
+
+  // 配置 gopls Go 语言服务器。
+  "gopls": {
+    // 从 gopls 工作区分析中排除指定目录。
+    "build.directoryFilters": [
+      // 排除工作区根下的 pb 目录前缀。
+      "-pb",
+      // 排除工作区根下的 gen 目录前缀。
+      "-gen",
+      // 排除工作区根下的 validate 目录前缀。
+      "-validate"
+    ]
+  },
+
+  // ==================== Vim 键位 ====================
+
+  // 配置 VSCodeVim 普通模式按键映射。
+  "vim.normalModeKeyBindings": [
+    // 将 H 映射为跳到本行第一个非空白字符。
+    {
+      // 触发映射的原始按键序列。
+      "before": [
+        "H"
+      ],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": [
+        "^"
+      ]
+    },
+    // 将 L 映射为跳到本行最后一个非空白字符。
+    {
+      // 触发映射的原始按键序列。
+      "before": [
+        "L"
+      ],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": [
+        "g",
+        "_"
+      ]
+    },
+    // 将 J 映射为向下移动 5 行。
+    {
+      // 触发映射的原始按键序列。
+      "before": [
+        "J"
+      ],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": [
+        "5",
+        "j"
+      ]
+    },
+    // 将 K 映射为向上移动 5 行。
+    {
+      // 触发映射的原始按键序列。
+      "before": [
+        "K"
+      ],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": [
+        "5",
+        "k"
+      ]
+    }
   ],
+
+  // 配置 VSCodeVim 可视模式按键映射。
+  "vim.visualModeKeyBindings": [
+    // 将 J 映射为向下移动或扩展选择 5 行。
+    {
+      // 触发映射的原始按键序列。
+      "before": [
+        "J"
+      ],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": [
+        "5",
+        "j"
+      ]
+    },
+    // 将 K 映射为向上移动或扩展选择 5 行。
+    {
+      // 触发映射的原始按键序列。
+      "before": [
+        "K"
+      ],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": [
+        "5",
+        "k"
+      ]
+    },
+    // 将 ai 按键序列重映射为 aI。
+    {
+      // 触发映射的原始按键序列。
+      "before": ["a", "i"],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": ["a", "I"]
+    }
+  ],
+
+  // 配置 VSCodeVim 操作符等待模式按键映射。
+  "vim.operatorPendingModeKeyBindings": [
+    // 将 H 映射为本行第一个非空白字符。
+    {
+      // 触发映射的原始按键序列。
+      "before": [
+        "H"
+      ],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": [
+        "^"
+      ]
+    },
+    // 将 L 映射为本行最后一个非空白字符。
+    {
+      // 触发映射的原始按键序列。
+      "before": [
+        "L"
+      ],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": [
+        "g",
+        "_"
+      ]
+    },
+    // 将 ai 按键序列重映射为 aI。
+    {
+      // 触发映射的原始按键序列。
+      "before": ["a", "i"],
+      // VSCodeVim 实际执行的目标按键序列。
+      "after": ["a", "I"]
+    }
+  ],
+
+  // 指定 Ctrl 组合键由 VSCodeVim 还是 VS Code 处理。
+  "vim.handleKeys": {
+    // Ctrl+D 交给 VSCodeVim 处理。
+    "<C-d>": true,
+    // Ctrl+S 交给 VS Code 处理。
+    "<C-s>": false,
+    // Ctrl+Z 交给 VS Code 处理。
+    "<C-z>": false,
+    // Ctrl+A 交给 VS Code 处理。
+    "<C-a>": false,
+    // Ctrl+C 交给 VS Code 处理。
+    "<C-c>": false,
+    // Ctrl+V 交给 VS Code 处理。
+    "<C-v>": false,
+    // Ctrl+X 交给 VS Code 处理。
+    "<C-x>": false,
+    // Ctrl+F 交给 VS Code 处理。
+    "<C-f>": false,
+    // Ctrl+H 交给 VS Code 处理。
+    "<C-h>": false,
+    // Ctrl+Y 交给 VS Code 处理。
+    "<C-y>": false,
+    // Ctrl+W 交给 VS Code 处理。
+    "<C-w>": false
+  },
+
+  // 启用 VSCodeVim 的代码折叠兼容修正。
+  "vim.foldfix": true,
+
+  // ==================== 其他扩展 ====================
+
+  // 允许 cSpell 识别由多个已知单词组成的复合词。
+  "cSpell.allowCompoundWords": true,
+
+  // 让 cSpell 使用通用英语和美式英语词典。
+  "cSpell.language": "en,en-US",
+
+  // 向 cSpell 用户词典加入项目和技术专有词。
   "cSpell.userWords": [
     "Aggr",
     "bson",
@@ -272,47 +700,135 @@
     "Debezium",
     "GLOBL",
     "goquery",
+    "gorm",
     "hiddo",
     "logx",
+    "mockey",
     "ptrs",
     "redisx",
     "Resps",
+    "tangminda",
     "ticdc",
     "ticdcconfig",
     "Tidb"
   ],
-  "chat.editing.alwaysSaveWithGeneratedChanges": true,
-  "workbench.editor.enablePreview": false,
-  "leetcode.endpoint": "leetcode-cn",
-  "leetcode.workspaceFolder": "/Users/SL/.leetcode",
-  "workbench.activityBar.location": "top",
-  "editor.scrollbar.horizontalScrollbarSize": 13,
-  "editor.tabSize": 2,
-  "editor.fontSize": 13,
-  "go.lintFlags": [
-    "--fast"
+
+  // 让 Code Runner 在集成终端中运行代码。
+  "code-runner.runInTerminal": true,
+
+  // Error Lens 只增强显示警告和错误级别的诊断。
+  "errorLens.enabledDiagnosticLevels": [
+    "warning",
+    "error"
   ],
-  "[go]":{
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
-  },
-  "go.lintTool": "golangci-lint",
-  "go.formatTool": "goimports",
+
+  // Error Lens 不增强显示 cSpell 和 ESLint 的诊断。
+  "errorLens.excludeBySource": [
+    "cSpell",
+    "eslint"
+  ],
+
+  // GoComment 生成函数注释时使用的模板。
   "functionTemplate": "// ${func_name} \n// @author: Merrick \n// @param ${param_name} \n",
-  "gitlens.graph.minimap.enabled": false,
-  "editor.lineHeight": 1.9,
-  "gitlens.views.scm.grouped.hiddenViews": {
-    "commits": false,
-    "branches": false,
-    "remotes": true,
-    "stashes": false,
-    "tags": false,
-    "worktrees": false,
-    "contributors": false,
-    "repositories": true,
-    "searchAndCompare": false,
-    "launchpad": false
+
+  // 启用 Iconify 图标注解。
+  "iconify.annotations": true,
+
+  // 在代码中的图标引用位置显示 Iconify 原位预览。
+  "iconify.inplace": true,
+
+  // 使用力扣中国站作为 LeetCode 扩展端点。
+  "leetcode.endpoint": "leetcode-cn",
+
+  // 将 LeetCode 题目文件保存在指定绝对路径。
+  "leetcode.workspaceFolder": "/Users/SL/.leetcode",
+
+  // 隐藏 Live Server 的普通信息通知。
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // 禁止 Live Server 验证 HTML 标签。
+  "liveServer.settings.donotVerifyTags": true,
+
+  // 允许参与该公共设置的 Red Hat 扩展发送遥测。
+  "redhat.telemetry.enabled": true,
+
+  // ==================== AI、Copilot、Codex 与 Claude Code ====================
+
+  // 沙箱内的 Agent 终端命令仍需要正常审批。
+  "chat.agent.sandbox.allowAutoApprove": false,
+
+  // 不允许 Agent 在沙箱失败后改为沙箱外执行命令。
+  "chat.agent.sandbox.allowUnsandboxedCommands": false,
+
+  // 保存 AI 生成的更改时不再额外确认。
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+
+  // 将聊天会话列表固定为堆叠布局。
+  "chat.viewSessions.orientation": "stacked",
+
+  // 后续 Codex 消息在当前任务运行时排队等待。
+  "chatgpt.followUpQueueMode": "queue",
+
+  // 将 Codex IDE 扩展界面语言覆盖为简体中文。
+  "chatgpt.localeOverride": "zh-CN",
+
+  // 隐藏 Claude Code 的首次使用引导。
+  "claudeCode.hideOnboarding": true,
+
+  // 默认在底部面板中打开 Claude Code。
+  "claudeCode.preferredLocation": "panel",
+
+  // 按语言控制 GitHub Copilot 内联建议。
+  "github.copilot.enable": {
+    // 默认对所有语言启用 Copilot。
+    "*": true,
+    // 在纯文本文件中禁用 Copilot。
+    "plaintext": false,
+    // 在 Markdown 文件中启用 Copilot。
+    "markdown": true,
+    // 在源代码管理提交输入框中禁用 Copilot。
+    "scminput": false,
+    // 在 Go 文件中启用 Copilot。
+    "go": true,
+    // 在 Rust 文件中禁用 Copilot。
+    "rust": false,
+    // 在 JSONC 文件中启用 Copilot。
+    "jsonc": true
   },
-  "workbench.preferredDarkColorTheme": "Vitesse Black",
+
+  // 将 Copilot 下一编辑建议的积极程度设为高。
+  "github.copilot.nextEditSuggestions.eagerness": "high",
+
+  // 启用 Copilot 下一编辑建议。
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  // 以下 Copilot 示例配置保持停用。
+  // "github.copilot.enable": {
+  //   "*": true,
+  //   "markdown": true,
+  //   "plaintext": false,
+  //   "yaml": false
+  // },
+
+  // ==================== 扩展管理、网络与安全 ====================
+
+  // 自动安装已安装扩展的更新。
+  "extensions.autoUpdate": "off",
+
+  // 忽略工作区和官方扩展推荐。
+  "extensions.ignoreRecommendations": true,
+
+  // 不严格验证代理服务器的 TLS 证书。
+  "http.proxyStrictSSL": false,
+
+  // 外部应用通过本地 VS Code 协议打开文件时不显示确认。
+  "security.promptForLocalFileProtocolHandling": false,
+
+  // 直接打开可信工作区之外的文件，不显示受限模式选择提示。
+  "security.workspace.trust.untrustedFiles": "open"
+
+  // 以下设置同步排除配置保持停用。
+  // "settingsSync.ignoredSettings": [
+  //   "editor.fontFamily"
+  // ]
 }
